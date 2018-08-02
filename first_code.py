@@ -71,3 +71,17 @@ with tf.Session() as sess:
         accuracy_n=sess.run(accuracy,feed_dict={x:validate_image,y:validate_labels})
         print('第'+str(epoch+1)+'轮，准确度=>'+str(accuracy_n))
         print('第'+str(epoch+1)+'轮，时间=>'+str(end_start-stat_time))
+write=tf.summary.FileWriter('logs', sess.graph)
+write.close()
+
+#打开终端命令--输入
+
+
+(base) C:\Users\Administrator>activate tensorflow
+(tensorflow) C:\Users\Administrator>tensorboard --logdir=D:\data\tensorflow\tens
+orflow\MNIST_data\logs --host=127.0.0.1
+d:\programdata\anaconda3\envs\tensorflow\lib\importlib\_bootstrap.py:222: Runtim
+eWarning: numpy.dtype size changed, may indicate binary incompatibility. Expecte
+d 96, got 88
+  return f(*args, **kwds)
+TensorBoard 1.9.0 at http://127.0.0.1:6006 (Press CTRL+C to quit)
